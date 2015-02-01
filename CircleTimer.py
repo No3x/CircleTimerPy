@@ -1,6 +1,18 @@
 #!/usr/bin/python
 
 import time
+import json
+from pprint import pprint
+import urllib2
+
+response = urllib2.urlopen('http://api.no3x.de/app_dev.php/CircleTimer/Settings')
+
+data = json.load(response)   
+connections = data['connections']
+
+for key, value in data.iteritems():
+	print key
+	print value
 
 
 # Number of segments
